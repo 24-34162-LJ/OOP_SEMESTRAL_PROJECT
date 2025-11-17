@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class base {
+    // aray for register
     private final ArrayList<String> item_name = new ArrayList<>(); // item name
     private final ArrayList<String> category = new ArrayList<>();
     private final ArrayList<String> Identification_card = new ArrayList<>();// item category
@@ -125,6 +126,90 @@ public class base {
     }
     public void setStorage_Location(String Storage_Location) {
         this.Storage_Location.add(Storage_Location);
+    }
+
+    // array for report/ what they lost
+
+    private final ArrayList<String> Item_name_lost =  new ArrayList<>();
+    private final ArrayList<String> Item_Category_lost =  new ArrayList<>();
+    private final ArrayList<String> Description_lost =  new ArrayList<>();
+    private final ArrayList<String> Color_lost =  new ArrayList<>();
+    private final ArrayList<String> Brand_lost =  new ArrayList<>();
+    private final ArrayList<String> When =  new ArrayList<>();
+    private final ArrayList<String> Where =  new ArrayList<>();
+    private final ArrayList<String> Student_Name_lost =  new ArrayList<>();
+    private final ArrayList<String> SR_code_lost =  new ArrayList<>();
+    private final ArrayList<String> g_suite_lost =  new ArrayList<>();
+
+    public ArrayList<String> getItem_name_lost() {
+        return Item_name_lost;
+    }
+    public void setItem_name_lost(String item_name_lost) {
+        this.Item_name_lost.add(item_name_lost);
+    }
+
+    public ArrayList<String> getItem_Category_lost() {
+        return Item_Category_lost;
+    }
+
+    public void setItem_Category_lost(String item_Category_lost) {
+        this.Item_Category_lost.add(item_Category_lost);
+    }
+
+    public ArrayList<String> getDescription_lost() {
+        return Description_lost;
+    }
+    public void setDescription_lost(String description_lost) {
+        this.Description_lost.add(description_lost);
+    }
+
+    public ArrayList<String> getColor_lost() {
+        return Color_lost;
+    }
+    public void setColor_lost(String color_lost) {
+        this.Color_lost.add(color_lost);
+    }
+
+    public ArrayList<String> getBrand_lost() {
+        return Brand_lost;
+    }
+    public void setBrand_lost(String brand_lost) {
+        this.Brand_lost.add(brand_lost);
+    }
+
+    public ArrayList<String> getWhen() {
+        return When;
+    }
+    public void setWhen(String when) {
+        this.When.add(when);
+    }
+
+    public ArrayList<String> getWhere() {
+        return Where;
+    }
+    public void setWhere(String where) {
+        this.Where.add(where);
+    }
+
+    public ArrayList<String> getStudent_Name_lost() {
+        return Student_Name_lost;
+    }
+    public void setStudent_Name_lost(String student_Name_lost) {
+        this.Student_Name_lost.add(student_Name_lost);
+    }
+
+    public ArrayList<String> getSR_code_lost() {
+        return SR_code_lost;
+    }
+    public void setSR_code_lost(String sr_code_lost) {
+        this.SR_code_lost.add(sr_code_lost);
+    }
+
+    public ArrayList<String> getG_suite_lost() {
+        return g_suite_lost;
+    }
+    public void setG_suite_lost(String g_suite_lost) {
+        this.g_suite_lost.add(g_suite_lost);
     }
 
     public void display() {

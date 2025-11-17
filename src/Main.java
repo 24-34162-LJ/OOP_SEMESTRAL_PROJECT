@@ -24,7 +24,7 @@ public class Main {
             switch (choice) {
                 case 1:
                     System.out.println("Register selected");
-                    sr.start(input);   // <-- pass the Scanner
+                    sr.start(input);   // pass the Scanner
                     break;
                 case 2:
                     System.out.println("Report selected");

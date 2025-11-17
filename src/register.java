@@ -9,11 +9,18 @@ public class register extends base {
         System.out.print("Item Name: ");
         String name = sc.nextLine();
         // if name is empty because of leftover newline, prompt again
-        if (name.trim().isEmpty()) {
-            System.out.print("You entered nothing. Item Name: ");
-            name = sc.nextLine();
+        while (true) {
+            if (name.trim().isEmpty()) {
+                System.out.print("You entered nothing. Item Name: ");
+                name = sc.nextLine();
+            }
+            else  {
+                break;
+            }
         }
         setItem_name(name);
+
+
 
         int y = 1;
         for (String s : category_sty) {
@@ -63,53 +70,93 @@ public class register extends base {
 
         System.out.print("Item Description: ");
         String description = sc.nextLine();
-        if (description.trim().isEmpty()) {
-            System.out.print("You entered nothing. Item Description: ");
+        while (true) {
+            if (description.trim().isEmpty()) {
+                System.out.print("You entered nothing. Item Description: ");
+                description = sc.nextLine();
+            }
+            else   {
+                break;
+            }
         }
         setDescription(description);
 
         System.out.print("Item Color: ");
         String color = sc.nextLine();
-        if (color.trim().isEmpty()) {
-            System.out.print("You entered nothing. Item Color: ");
+        while (true) {
+            if (color.trim().isEmpty()) {
+                System.out.print("You entered nothing. Item Color: ");
+                color = sc.nextLine();
+            }
+            else {
+                break;
+            }
         }
         setItem_Color(color);
 
         System.out.print("Item brand: ");
         String brand = sc.nextLine();
-        if (brand.trim().isEmpty()) {
-            System.out.print("You entered nothing. Item Brand: ");
+        while (true) {
+            if (brand.trim().isEmpty()) {
+                System.out.print("You entered nothing. Item Brand: ");
+                brand = sc.nextLine();
+            }
+            else {
+                break;
+            }
         }
         setItem_Brand(brand);
 
         System.out.print("Item Distinguishing: ");
         String distinguishing = sc.nextLine();
-        if (distinguishing.trim().isEmpty()) {
-            System.out.print("You entered nothing. Item Distinguishing: ");
+        while (true) {
+            if (distinguishing.trim().isEmpty()) {
+                System.out.print("You entered nothing. Item Distinguishing: ");
+                distinguishing = sc.nextLine();
+            }
+            else {
+                break;
+            }
         }
         setItem_Distinguishing_Marks(distinguishing);
 
         System.out.print("Item date found: ");
         String date = sc.nextLine();
-        if (date.trim().isEmpty()) {
-            System.out.print("You entered nothing. Item Date: ");
+        while (true) {
+            if (date.trim().isEmpty()) {
+                System.out.print("You entered nothing. Item Date: ");
+                date = sc.nextLine();
+            }
+            else {
+                break;
+            }
         }
         setFound_Date(date);
 
         System.out.print("Item Location found: ");
         String location = sc.nextLine();
-        if (location.trim().isEmpty()) {
-            System.out.print("You entered nothing. Item Location: ");
+        while (true) {
+            if (location.trim().isEmpty()) {
+                System.out.print("You entered nothing. Item Location: ");
+                location = sc.nextLine();
+            }
+            else {
+                break;
+            }
         }
         setFound_Location(location);
 
         System.out.print("storage location: ");
         String storage_location = sc.nextLine();
-        if (storage_location.trim().isEmpty()) {
-            System.out.print("You entered nothing. Item Storage: ");
+        while (true) {
+            if (storage_location.trim().isEmpty()) {
+                System.out.print("You entered nothing. Item Storage: ");
+                storage_location = sc.nextLine();
+            }
+            else {
+                break;
+            }
         }
         setStorage_Location(storage_location);
-
-
     }
 }
