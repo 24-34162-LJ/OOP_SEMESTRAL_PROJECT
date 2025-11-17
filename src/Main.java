@@ -42,7 +42,7 @@ public class Main {
                     System.out.println("INVALID NUMBER PLEASE ENTER 1 - 5");
             }
 
-            System.out.println(sr.getItem_name());
+            sr.display();
 
             System.out.print("reagain? y/n: ");
             String reagain = input.nextLine(); // use nextLine() to read whole line

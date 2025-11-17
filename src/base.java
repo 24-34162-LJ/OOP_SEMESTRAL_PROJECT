@@ -2,21 +2,21 @@ import java.util.ArrayList;
 
 public class base {
     private final ArrayList<String> item_name = new ArrayList<>(); // item name
-    private final ArrayList<String> Identification_card = new ArrayList<>(); // item category
+    private final ArrayList<String> category = new ArrayList<>();
+    private final ArrayList<String> Identification_card = new ArrayList<>();// item category
     private final ArrayList<String> Electronics = new ArrayList<>();
     private final ArrayList<String> School_Supplies = new ArrayList<>();
     private final ArrayList<String> Containers_Bottles = new ArrayList<>();
     private final ArrayList<String> Personal_Accessories = new ArrayList<>();
     private final ArrayList<String> Clothing_Items = new ArrayList<>();
     private final ArrayList<String> Miscellaneous = new ArrayList<>();
+    private final ArrayList<String> Description = new ArrayList<>();
     private final ArrayList<String> Item_Color = new ArrayList<>();
     private final ArrayList<String> Item_Brand = new ArrayList<>();
     private final ArrayList<String> Item_Distinguishing_Marks = new ArrayList<>();
     private final ArrayList<String> Found_Date = new ArrayList<>();
     private final ArrayList<String> Found_Location = new ArrayList<>();
     private final ArrayList<String> Storage_Location = new ArrayList<>();
-    private ArrayList<Integer> Item_id = new ArrayList<>();
-
 
 
     public ArrayList<String> getItem_name() {
@@ -25,6 +25,12 @@ public class base {
 
     public void setItem_name(String item_name) {
         this.item_name.add(item_name);
+    }
+    public ArrayList<String> getCategory() {
+        return category;
+    }
+    public void setCategory(String category) {
+        this.category.add(category);
     }
 
     public ArrayList<String> getIdentification_card() {
@@ -76,6 +82,13 @@ public class base {
         this.Miscellaneous.add(Miscellaneous);
     }
 
+    public ArrayList<String> getDescription() {
+        return Description;
+    }
+    public void setDescription(String Description) {
+        this.Description.add(Description);
+    }
+
     public ArrayList<String> getItem_Color() {
         return Item_Color;
     }
@@ -113,11 +126,20 @@ public class base {
     public void setStorage_Location(String Storage_Location) {
         this.Storage_Location.add(Storage_Location);
     }
-    public ArrayList<Integer> getItem_id() {
-        return Item_id;
-    }
-    public void setItem_id(ArrayList<Integer> Item_id) {
-        this.Item_id = Item_id;
+
+    public void display() {
+        for (int i = 0; i < this.item_name.size(); i++) {
+            System.out.println("ID: "+ i+1);
+            System.out.println(this.item_name.get(i));
+            System.out.println(this.category.get(i));
+            System.out.println(this.Description.get(i));
+            System.out.println(this.Item_Color.get(i));
+            System.out.println(this.Item_Brand.get(i));
+            System.out.println(this.Item_Distinguishing_Marks.get(i));
+            System.out.println(this.Found_Date.get(i));
+            System.out.println(this.Found_Location.get(i));
+            System.out.println(this.Storage_Location.get(i));
+        }
     }
 }
 
