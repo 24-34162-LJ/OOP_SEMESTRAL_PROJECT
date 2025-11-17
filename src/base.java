@@ -141,6 +141,14 @@ public class base {
     private final ArrayList<String> SR_code_lost =  new ArrayList<>();
     private final ArrayList<String> g_suite_lost =  new ArrayList<>();
 
+    private final ArrayList<String> Identification_card_lost = new ArrayList<>();// item category
+    private final ArrayList<String> Electronics_lost = new ArrayList<>();
+    private final ArrayList<String> School_Supplies_lost = new ArrayList<>();
+    private final ArrayList<String> Containers_Bottles_lost = new ArrayList<>();
+    private final ArrayList<String> Personal_Accessories_lost = new ArrayList<>();
+    private final ArrayList<String> Clothing_Items_lost = new ArrayList<>();
+    private final ArrayList<String> Miscellaneous_lost = new ArrayList<>();
+
     public ArrayList<String> getItem_name_lost() {
         return Item_name_lost;
     }
@@ -212,19 +220,124 @@ public class base {
         this.g_suite_lost.add(g_suite_lost);
     }
 
+    public ArrayList<String> getIdentification_card_lost() {
+        return Identification_card_lost;
+    }
+
+    public void setIdentification_card_lost(String item) {
+        Identification_card_lost.add(item);
+    }
+
+    public ArrayList<String> getElectronics_lost() {
+        return Electronics_lost;
+    }
+
+    public void setElectronics_lost(String item) {
+        Electronics_lost.add(item);
+    }
+
+    public ArrayList<String> getSchool_Supplies_lost() {
+        return School_Supplies_lost;
+    }
+
+    public void setSchool_Supplies_lost(String item) {
+        School_Supplies_lost.add(item);
+    }
+
+    public ArrayList<String> getContainers_Bottles_lost() {
+        return Containers_Bottles_lost;
+    }
+
+    public void setContainers_Bottles_lost(String item) {
+        Containers_Bottles_lost.add(item);
+    }
+
+    public ArrayList<String> getPersonal_Accessories_lost() {
+        return Personal_Accessories_lost;
+    }
+
+    public void setPersonal_Accessories_lost(String item) {
+        Personal_Accessories_lost.add(item);
+    }
+
+    public ArrayList<String> getClothing_Items_lost() {
+        return Clothing_Items_lost;
+    }
+
+    public void setClothing_Items_lost(String item) {
+        Clothing_Items_lost.add(item);
+    }
+
+    public ArrayList<String> getMiscellaneous_lost() {
+        return Miscellaneous_lost;
+    }
+
+    public void setMiscellaneous_lost(String item) {
+        Miscellaneous_lost.add(item);
+    }
+
     public void display() {
-        for (int i = 0; i < this.item_name.size(); i++) {
-            System.out.println("ID: "+ i+1);
-            System.out.println(this.item_name.get(i));
-            System.out.println(this.category.get(i));
-            System.out.println(this.Description.get(i));
-            System.out.println(this.Item_Color.get(i));
-            System.out.println(this.Item_Brand.get(i));
-            System.out.println(this.Item_Distinguishing_Marks.get(i));
-            System.out.println(this.Found_Date.get(i));
-            System.out.println(this.Found_Location.get(i));
-            System.out.println(this.Storage_Location.get(i));
+        // Use smallest size among related lists to avoid IndexOutOfBounds
+        int size = Math.min(item_name.size(),
+                Math.min(category.size(),
+                        Math.min(Description.size(),
+                                Math.min(Item_Color.size(),
+                                        Math.min(Item_Brand.size(),
+                                                Math.min(Item_Distinguishing_Marks.size(),
+                                                        Math.min(Found_Date.size(),
+                                                                Math.min(Found_Location.size(), Storage_Location.size()))))))));
+
+        if (size == 0) {
+            System.out.println("No registered (found) items to display.");
+            return;
+        }
+
+        for (int i = 0; i < size; i++) {
+            System.out.println("ID: " + (i + 1));
+            System.out.println("Name: " + this.item_name.get(i));
+            System.out.println("Category: " + this.category.get(i));
+            System.out.println("Description: " + this.Description.get(i));
+            System.out.println("Color: " + this.Item_Color.get(i));
+            System.out.println("Brand: " + this.Item_Brand.get(i));
+            System.out.println("Distinguishing Marks: " + this.Item_Distinguishing_Marks.get(i));
+            System.out.println("Found Date: " + this.Found_Date.get(i));
+            System.out.println("Found Location: " + this.Found_Location.get(i));
+            System.out.println("Storage Location: " + this.Storage_Location.get(i));
+            System.out.println("------------------------------");
         }
     }
+
+    public void display_lost() {
+        // Use smallest size among related lost lists
+        int size = Math.min(Item_name_lost.size(),
+                Math.min(Item_Category_lost.size(),
+                        Math.min(Description_lost.size(),
+                                Math.min(Color_lost.size(),
+                                        Math.min(Brand_lost.size(),
+                                                Math.min(When.size(),
+                                                        Math.min(Where.size(),
+                                                                Math.min(Student_Name_lost.size(), Math.min(SR_code_lost.size(), g_suite_lost.size())))))))));
+
+        if (size == 0) {
+            System.out.println("No reported lost items to display.");
+            return;
+        }
+
+        for (int i = 0; i < size; i++) {
+            System.out.println("ID: " + (i + 1));
+            System.out.println("Name: " + this.Item_name_lost.get(i));
+            System.out.println("Category: " + this.Item_Category_lost.get(i));
+            System.out.println("Description: " + this.Description_lost.get(i));
+            System.out.println("Color: " + this.Color_lost.get(i));
+            System.out.println("Brand: " + this.Brand_lost.get(i));
+            System.out.println("When: " + this.When.get(i));
+            System.out.println("Where: " + this.Where.get(i));
+            System.out.println("Student Name: " + this.Student_Name_lost.get(i));
+            System.out.println("SR Code: " + this.SR_code_lost.get(i));
+            System.out.println("G-Suite: " + this.g_suite_lost.get(i));
+            System.out.println("------------------------------");
+        }
+    }
+
 }
 

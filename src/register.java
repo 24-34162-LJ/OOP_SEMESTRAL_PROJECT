@@ -20,8 +20,6 @@ public class register extends base {
         }
         setItem_name(name);
 
-
-
         int y = 1;
         for (String s : category_sty) {
             System.out.println(y + " " + s);

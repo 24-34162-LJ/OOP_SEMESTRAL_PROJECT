@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         register sr = new register();
+        report rp = new report();
 
         do {
             String[] elements = {"Register", "Report", "Search", "Claim", "Admin"};
@@ -28,6 +29,7 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("Report selected");
+                    rp.start(input);
                     break;
                 case 3:
                     System.out.println("Search selected");
@@ -43,6 +45,7 @@ public class Main {
             }
 
             sr.display();
+            rp.display_lost();
 
             System.out.print("reagain? y/n: ");
             String reagain = input.nextLine(); // use nextLine() to read whole line

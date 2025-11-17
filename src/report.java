@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class report extends base {
     public void start(Scanner sc) {
+        String[] category_sty_lost = {"Identification & Cards", "Electronics", "School Supplies", "Containers & Bottles", "Personal Accessories", "Clothing Items", "Miscellaneous"};
+
         System.out.print("Item name: ");
         String name = sc.nextLine();
         while (true) {
@@ -15,18 +17,51 @@ public class report extends base {
         }
         setItem_name_lost(name);
 
-        System.out.print("Item Category: ");
-        String category = sc.nextLine();
-        while (true) {
-            if (category.trim().isEmpty()) {
-                System.out.print("You entered nothing. Item Category: ");
-                category = sc.nextLine();
-            }
-            else {
-                break;
-            }
+        int k = 1;
+        for (String s : category_sty_lost) {
+            System.out.println(k + " " + s);
+            k++;
         }
-        setItem_Category_lost(category);
+
+        System.out.print("Item Category (1-7): ");
+        // validate integer input
+        while (!sc.hasNextInt()) {
+            System.out.println("Please enter a number 1-7.");
+            sc.next(); // consume invalid token
+        }
+        int category = sc.nextInt();
+        sc.nextLine(); // consume newline after nextInt()
+
+        if  (category == 1) {
+            setIdentification_card_lost("Identification & Cards");
+            setItem_Category_lost("Identification & Cards");
+        }
+        else if (category == 2) {
+            setElectronics_lost("Electronics");
+            setItem_Category_lost("Electronics");
+        }
+        else if (category == 3) {
+            setSchool_Supplies_lost("School Supplies");
+            setItem_Category_lost("School Supplies");
+        }
+        else if (category == 4) {
+            setContainers_Bottles_lost("Containers & Bottles");
+            setItem_Category_lost("Containers & Bottles");
+        }
+        else if (category == 5) {
+            setPersonal_Accessories_lost("Personal Accessories");
+            setItem_Category_lost("Personal Accessories");
+        }
+        else if (category == 6) {
+            setClothing_Items_lost("Clothing Items");
+            setItem_Category_lost("Clothing Items");
+        }
+        else if (category == 7) {
+            setMiscellaneous_lost("Miscellaneous");
+            setItem_Category_lost("Miscellaneous");
+        } else {
+            System.out.println("Invalid category selected.");
+        }
 
         System.out.print("Description / Details: ");
         String description = sc.nextLine();
