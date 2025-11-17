@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        register sr = new register();
 
         do {
             String[] elements = {"Register", "Report", "Search", "Claim", "Admin"};
@@ -11,40 +12,40 @@ public class Main {
             }
 
             System.out.print("Enter your choice: ");
-            // Basic choice reading - assumes the user types an integer
+            // safe input check
+            if (!input.hasNextInt()) {
+                System.out.println("Please enter a number 1-5.");
+                input.next(); // consume invalid
+                continue;
+            }
             int choice = input.nextInt();
+            input.nextLine(); // IMPORTANT: consume newline leftover
 
             switch (choice) {
                 case 1:
                     System.out.println("Register selected");
-                    register sr = new register();
-                    sr.start();
+                    sr.start(input);   // <-- pass the Scanner
                     break;
                 case 2:
                     System.out.println("Report selected");
-                    // implement report logic here
                     break;
                 case 3:
                     System.out.println("Search selected");
-                    // implement search logic here
                     break;
                 case 4:
                     System.out.println("Claim selected");
-                    // implement claim logic here
                     break;
                 case 5:
                     System.out.println("Admin selected");
-                    // implement admin logic here
                     break;
                 default:
                     System.out.println("INVALID NUMBER PLEASE ENTER 1 - 5");
             }
 
-            base np = new base();
-            np.display();
+            System.out.println(sr.getItem_name());
 
             System.out.print("reagain? y/n: ");
-            String reagain = input.next();
+            String reagain = input.nextLine(); // use nextLine() to read whole line
 
             if (reagain.equalsIgnoreCase("n") || reagain.equalsIgnoreCase("no")) {
                 System.out.println("Goodbye!");
@@ -53,6 +54,6 @@ public class Main {
 
         } while (true);
 
-        input.close();
+        input.close(); // close scanner once at program termination
     }
 }
