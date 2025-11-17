@@ -17,7 +17,8 @@ public class Main {
             switch (choice) {
                 case 1:
                     System.out.println("Register selected");
-                    // call register method or implement logic here
+                    register sr = new register();
+                    sr.start();
                     break;
                 case 2:
                     System.out.println("Report selected");
@@ -38,6 +39,9 @@ public class Main {
                 default:
                     System.out.println("INVALID NUMBER PLEASE ENTER 1 - 5");
             }
+
+            base np = new base();
+            np.display();
 
             System.out.print("reagain? y/n: ");
             String reagain = input.next();
