@@ -5,6 +5,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         register sr = new register();
         report rp = new report();
+        search search = new search();
 
         do {
             String[] elements = {"Register", "Report", "Search", "Claim", "Admin"};
@@ -33,6 +34,7 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("Search selected");
+                    search.Search_bar(input);
                     break;
                 case 4:
                     System.out.println("Claim selected");

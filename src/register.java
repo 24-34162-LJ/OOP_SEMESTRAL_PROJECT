@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class register extends base {
-    // accept Scanner from main so we reuse the same System.in scanner
     public void start(Scanner sc) {
 
         String[] category_sty = {"Identification & Cards", "Electronics", "School Supplies", "Containers & Bottles", "Personal Accessories", "Clothing Items", "Miscellaneous"};
@@ -157,4 +156,5 @@ public class register extends base {
         }
         setStorage_Location(storage_location);
     }
+
 }
