@@ -30,13 +30,13 @@ public class claim extends base {
         try {
             id = Integer.parseInt(input) - 1;  // convert to zero-based index
         } catch (NumberFormatException e) {
-            System.out.println("❌ Please enter a valid number.");
+            System.out.println("Please enter a valid number.");
             return;
         }
 
         // validate index
         if (id < 0 || id >= getItem_name().size()) {
-            System.out.println("❌ Invalid item number.");
+            System.out.println("Invalid item number.");
             return;
         }
 
@@ -56,11 +56,11 @@ public class claim extends base {
         String ans = sc.nextLine();
 
         if (ans.equalsIgnoreCase(getVerificationAnswer().get(id))) {
-            System.out.println("✅ Correct! Claim Pending.");
+            System.out.println("Correct! Claim Pending.");
             getClaimStatus().set(id, "Pending");
             getClaimantName().set(id, name);
         } else {
-            System.out.println("❌ Wrong answer. Claim denied.");
+            System.out.println("Wrong answer. Claim denied.");
         }
     }
 }
