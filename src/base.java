@@ -277,6 +277,43 @@ public class base {
         Miscellaneous_lost.add(item);
     }
 
+    private static final ArrayList<String> Verification_Question = new ArrayList<>();
+
+    private static final ArrayList<String> Verification_Answer = new ArrayList<>();
+
+    private static final ArrayList<String> Claim_Status = new ArrayList<>();
+
+    private static final ArrayList<String> Claimant_Name = new ArrayList<>();
+
+    // Getters and setters for claim system
+
+    public static ArrayList<String> getVerificationQuestion() {
+        return Verification_Question;
+    }
+    public void setVerificationQuestion(String question) {
+        Verification_Question.add(question);
+    }
+
+    public static ArrayList<String> getVerificationAnswer() {
+        return Verification_Answer;
+    }
+    public void setVerificationAnswer(String answer) {
+        Verification_Answer.add(answer);
+    }
+
+    public static ArrayList<String> getClaimStatus() {
+        return Claim_Status;
+    }
+    public void setClaimStatus(String status) {
+        Claim_Status.add(status);
+    }
+
+    public static ArrayList<String> getClaimantName() {
+        return Claimant_Name;
+    }
+    public void setClaimantName(String name) {
+        Claimant_Name.add(name);
+    }
 
     public void display() {
         // Use smallest size among related lists to avoid IndexOutOfBounds

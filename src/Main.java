@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        claim cl = new claim();
+        admin ad = new admin();
         Scanner input = new Scanner(System.in);
         register sr = new register();
         report rp = new report();
@@ -38,9 +40,11 @@ public class Main {
                     break;
                 case 4:
                     System.out.println("Claim selected");
+                    cl.start(input);
                     break;
                 case 5:
                     System.out.println("Admin selected");
+                    ad.start(input);
                     break;
                 default:
                     System.out.println("INVALID NUMBER PLEASE ENTER 1 - 5");

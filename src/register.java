@@ -155,6 +155,18 @@ public class register extends base {
             }
         }
         setStorage_Location(storage_location);
+
+        System.out.print("Set a verification question for this item: ");
+        String q = sc.nextLine();
+        setVerificationQuestion(q);
+
+        System.out.print("Answer to the verification question: ");
+        String a = sc.nextLine();
+        setVerificationAnswer(a);
+
+        // Item is available for claim
+        setClaimStatus("Available");
+        setClaimantName("None");
     }
 
 }
